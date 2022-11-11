@@ -2,9 +2,9 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://127.0.0.1:4444
+            url: http://yii2.local:80
             browser: chrome
         - Yii2:
             part: orm
             entryScript: index-test.php
-            cleanup: false
+            cleanup: true

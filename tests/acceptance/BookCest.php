@@ -7,6 +7,6 @@ class BookCest
     public function ensureThatGreeterWorks(AcceptanceTester $I)
     {
         $I->amOnPage(Url::toRoute('/book/greeter'));
-        $I->see('Название первой картины', 'h1');
+        $I->see('Название первой картины', 'h2');
     }
 }

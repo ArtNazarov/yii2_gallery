@@ -1,4 +1,4 @@
-<h1>Форма для входа</h1>
+<h1>Login</h1>
 <div class="panel panel-info">
     <div class='panel-heading'></div><!-- comment -->
 <div class='panel-body'>
