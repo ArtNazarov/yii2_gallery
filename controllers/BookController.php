@@ -34,14 +34,6 @@ class BookController extends Controller {
         
     }
     
-    public function actionJoin(){
-        yii::trace("Сообщение для отладчика", "book");
-        return $this->render('join');
-    }
-    
-    public function actionLogin(){
-        return $this->render('login');
-    }
     
     
     
