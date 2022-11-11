@@ -1,5 +1,7 @@
 <?php
 use yii\bootstrap5\Html;
+use yii\bootstrap5\NavBar;
+use yii\bootstrap5\Nav
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -13,7 +15,22 @@ use yii\bootstrap5\Html;
         <title></title>
     </head>
     <body style="background-color:gold">
-          <?= $content ?>
+     
+<?php
+    NavBar::begin(['brandLabel' => 'Галерея']);
+echo Nav::widget([
+    'items' => [
+        ['label' => 'Главная', 'url' => ['/site/index']],
+        ['label' => 'Картины', 'url' => ['/book/greeter']],
+        ['label' => 'Вход на сайт', 'url' => ['/book/login']],
+        ['label' => 'Регистрация', 'url' => ['/book/join']]
+    ],
+    'options' => ['class' => 'navbar-nav'],
+]);
+NavBar::end();
+?>
+
+     <?= $content ?>
 
 <?php $this->endBody() ?>
 </body>
