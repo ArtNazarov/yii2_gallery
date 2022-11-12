@@ -72,8 +72,8 @@ class MyLoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
-        }
+            $this->_user = UserRecord::findOne($this->email);
+        };
 
         return $this->_user;
     }

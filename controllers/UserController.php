@@ -11,6 +11,7 @@ use app\models\UserRecord;
 
 use \app\models\MyLoginForm;
 use app\models\MyJoinForm;
+use app\models\UserIdentity;
 
 
 class UserController extends Controller {
@@ -29,6 +30,7 @@ class UserController extends Controller {
         
         
         $mv = new MyJoinForm();
+        $mv->email = '@mail.ru';
         return $this->render('join',
                 ['model'=>$mv]);
     }
@@ -38,10 +40,20 @@ class UserController extends Controller {
         
         $mv = new MyLoginForm();
         
+       
+        // кого логиним
+        $identity = UserIdentity::findOne(['email' => 'kurtis59@gmail.com']); 
+        // передаем модель данных
+        Yii::$app->user->login($identity);
+        
         return $this->render('login',
                 ['model'=> $mv]);
         
         
+    }
+    
+    public function actionLogout(){
+        Yii::$app->user->logout();
     }
     
     

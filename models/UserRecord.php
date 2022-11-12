@@ -1,15 +1,20 @@
 <?php
 
 namespace app\models;
-use yii\db\ActiveRecord;
 
+use yii\db\ActiveRecord;
+ 
 class UserRecord extends ActiveRecord{
+
     
+    
+    // таблица, в которой хранятся данные сущности
     public static function tableName(): string {
         //return parent::tableName();
         return "user";
     }
     
+    // назначает поля для тестирования
     public function setTestUser(){
         // Подставные данные, липа
         $faker = \Faker\Factory::create(); 
@@ -20,5 +25,7 @@ class UserRecord extends ActiveRecord{
         $this->passhash = sha1($faker->password);
         
     }
-    
+
+     
+
 }
