@@ -84,4 +84,11 @@ class MyJoinForm extends Model
 
         return $this->_user;
     }
+    
+    public function setUserRecord($userRecord) {
+        $this->username = $userRecord->username;
+        $this->email = $userRecord->email;
+        $this->password = 'password';
+        $this->password2 = 'password';
+    }
 }

@@ -32,9 +32,17 @@ class UserController extends Controller {
        
        // yii::trace("Сообщение для отладчика", "book");
         
+        $userRecord = new UserRecord();
+        $userRecord->setTestUser();
+        
+        
+        
+        
         
         $mv = new MyJoinForm();
-        $mv->email = '@mail.ru';
+        
+        $mv->setUserRecord($userRecord);
+        
         return $this->render('join',
                 ['model'=>$mv]);
     }
