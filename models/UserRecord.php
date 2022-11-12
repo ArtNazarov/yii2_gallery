@@ -11,11 +11,13 @@ class UserRecord extends ActiveRecord{
     }
     
     public function setTestUser(){
+        // Подставные данные, липа
+        $faker = \Faker\Factory::create(); 
         
-        $this->name = "John";
-        $this->email = "test@test.ru";
-        $this->status = 2;
-        $this->passhash = sha1("test");
+        $this->name = $faker->name;
+        $this->email = $faker->email;
+        $this->status = $faker->randomDigit();
+        $this->passhash = sha1($faker->password);
         
     }
     

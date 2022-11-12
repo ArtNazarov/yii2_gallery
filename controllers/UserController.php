@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\web\Controller;
 use app\models\UserRecord;
 
+use \app\models\MyLoginForm;
+use app\models\MyJoinForm;
 
 
 class UserController extends Controller {
@@ -23,11 +25,22 @@ class UserController extends Controller {
         
         
         yii::trace("Сообщение для отладчика", "book");
-        return $this->render('join');
+        
+        
+        $mv = new MyJoinForm();
+        return $this->render('join',
+                ['model'=>$mv]);
     }
     
     public function actionLogin(){
-        return $this->render('login');
+        
+        
+        $mv = new MyLoginForm();
+        
+        return $this->render('login',
+                ['model'=> $mv]);
+        
+        
     }
     
     
