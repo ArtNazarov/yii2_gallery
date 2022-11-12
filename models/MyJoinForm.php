@@ -29,7 +29,11 @@ class MyJoinForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['username', 'password', 'password2', 'email'], 'required', 'message'=> 'Поля не должны быть пусты'],
+            ['username', 'string', 'min'=>3, 'max'=>10, 'message'=>"Имя должно быть от 3 до 10 символов"],
+            ['email', 'email', 'message'=>'Адрес электропочты не верен'],
+            ['password', 'string', 'min'=>4, 'message'=>'Пароль должен быть от 4 знаков'],
+            ['password2', 'compare', 'compareAttribute'=>'password', 'message'=>'Не совпадают пароли'],
             // rememberMe must be a boolean value
            
             // password is validated by validatePassword()
