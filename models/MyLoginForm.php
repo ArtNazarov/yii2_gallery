@@ -13,7 +13,7 @@ use yii\base\Model;
  */
 class MyLoginForm extends Model
 {
-    public $email;
+    public $username;
     public $password;
      
     private $_user = false;

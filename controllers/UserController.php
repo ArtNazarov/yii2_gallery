@@ -42,7 +42,7 @@ class UserController extends Controller {
         
        
         // кого логиним
-        $identity = UserIdentity::findOne(['email' => 'kurtis59@gmail.com']); 
+        $identity = UserIdentity::findOne(['username' => 'tester']); 
         // передаем модель данных
         Yii::$app->user->login($identity);
         
@@ -54,6 +54,8 @@ class UserController extends Controller {
     
     public function actionLogout(){
         Yii::$app->user->logout();
+        // после выхода переадресация на главную
+        return $this->redirect('/'); 
     }
     
     

@@ -19,7 +19,7 @@ class UserRecord extends ActiveRecord{
         // Подставные данные, липа
         $faker = \Faker\Factory::create(); 
         
-        $this->name = $faker->name;
+        $this->username = $faker->name;
         $this->email = $faker->email;
         $this->status = $faker->randomDigit();
         $this->passhash = sha1($faker->password);

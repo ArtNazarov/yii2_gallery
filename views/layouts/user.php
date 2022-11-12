@@ -16,19 +16,7 @@ use yii\bootstrap5\Nav
     </head>
     <body style="background-color:green">
      
-<?php
-    NavBar::begin(['brandLabel' => 'Галерея']);
-echo Nav::widget([
-    'items' => [
-        ['label' => 'Главная', 'url' => ['/site/index']],
-        ['label' => 'Картины', 'url' => ['/book/greeter']],
-        ['label' => 'Вход на сайт', 'url' => ['/user/login']],
-        ['label' => 'Регистрация', 'url' => ['/user/join']]
-    ],
-    'options' => ['class' => 'navbar-nav'],
-]);
-NavBar::end();
-?>
+     <?php include(__DIR__ . '/mymenu.php'); ?>
 
      <?= $content ?>
 
