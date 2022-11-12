@@ -8,7 +8,7 @@ use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 
 $basic_links = [
-    ['label' => 'Главная', 'url' => ['/site/index']],
+ 
     ['label' => 'Картины', 'url' => ['/book/greeter']]
     ];
 

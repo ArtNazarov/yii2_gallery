@@ -26,13 +26,28 @@ class UserController extends Controller {
         $userRecord->save();
         */
         
-        yii::trace("Сообщение для отладчика", "book");
+        if (yii::$app->request->isPost)
+            return $this->actionJoinPost();
+        
+       
+       // yii::trace("Сообщение для отладчика", "book");
         
         
         $mv = new MyJoinForm();
         $mv->email = '@mail.ru';
         return $this->render('join',
                 ['model'=>$mv]);
+    }
+    
+    // если данные пришли, обработка
+    public function actionJoinPost(){
+        
+      $mv = new MyJoinForm(); 
+      $mv->load(yii::$app->request->post());
+      
+       return $this->render('join',
+                ['model'=>$mv]);
+        
     }
     
     public function actionLogin(){
