@@ -19,10 +19,11 @@ class UserController extends Controller {
    
     
     public function actionJoin(){
+        /*
         $userRecord = new UserRecord();
         $userRecord->setTestUser();
         $userRecord->save();
-        
+        */
         
         yii::trace("Сообщение для отладчика", "book");
         

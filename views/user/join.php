@@ -19,7 +19,7 @@ $form = ActiveForm::begin([
     
    <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Войти', ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton('Регистрация', ['class' => 'btn btn-primary']) ?>
         </div>
     </div>
 <?php ActiveForm::end() ?>
