@@ -53,6 +53,14 @@ class UserController extends Controller {
       $mv = new MyJoinForm(); 
       $mv->load(yii::$app->request->post());
       
+      if ($mv->validate()) {
+         yii::trace("Сохраняем в базе валидную форму", "user");
+         $userRecord = new UserRecord();
+         $userRecord->getFromForm($mv);
+         $userRecord->save();
+         $this->redirect('/user/join'); // перенаправили на форму входа
+      }
+      
        return $this->render('join',
                 ['model'=>$mv]);
         
@@ -60,18 +68,34 @@ class UserController extends Controller {
     
     public function actionLogin(){
         
+        if (yii::$app->request->isPost)
+            return $this->actionLoginPost();
         
         $mv = new MyLoginForm();
         
-       
-        // кого логиним
-        $identity = UserIdentity::findOne(['username' => 'tester']); 
-        // передаем модель данных
-        Yii::$app->user->login($identity);
-        
+         
         return $this->render('login',
                 ['model'=> $mv]);
         
+      
+        
+    }
+    
+    public function actionLoginPost() {
+        
+        $mv = new MyLoginForm();
+        $mv->load(yii::$app->request->post());
+      
+        if ($mv->validate()) {
+          // кого логиним
+        $identity = UserIdentity::findOne(['username' => $mv->username]); 
+        // передаем модель данных
+        Yii::$app->user->login($identity);
+        
+        
+         };
+         
+         return $this->redirect('/');
         
     }
     

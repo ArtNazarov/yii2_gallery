@@ -30,7 +30,7 @@ class MyLoginForm extends Model
             // rememberMe must be a boolean value
            
             // password is validated by validatePassword()
-            ['password', 'validatePassword'],
+            
         ];
     }
 

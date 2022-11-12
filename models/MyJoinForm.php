@@ -37,7 +37,10 @@ class MyJoinForm extends Model
             // rememberMe must be a boolean value
            
             // password is validated by validatePassword()
-            ['password', 'validatePassword'],
+            
+            ['username', 'errorIfMagic', 
+                'message'=>'magic'],
+            ['email', 'errorIfEmailUsed', 'message'=>'e-mail используется']
         ];
     }
 
@@ -91,4 +94,24 @@ class MyJoinForm extends Model
         $this->password = 'password';
         $this->password2 = 'password';
     }
+    
+    public function errorIfEmailUsed(){
+        
+        
+        
+        if (UserRecord::isExistsEmail($this->email))
+        {
+        $this->addError('email', 'Этот e-mail уже используется');
+        };
+        
+        }
+        
+    public function errorIfMagic(){
+       
+        
+        if ($this->username === 'magic'){
+            $this->addError('username', 'magic error');
+        }
+        
+        }
 }

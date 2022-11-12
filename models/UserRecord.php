@@ -3,6 +3,7 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use app\models\MyJoinForm;
  
 class UserRecord extends ActiveRecord{
 
@@ -23,6 +24,19 @@ class UserRecord extends ActiveRecord{
         $this->email = $faker->email;
         $this->status = $faker->randomDigit();
         $this->passhash = sha1($faker->password);
+        
+    }
+    
+    public static function isExistsEmail($email){
+        return (static::find()->where(['email'=>$email])->count()>0);
+    }
+    
+    public function getFromForm(MyJoinForm $mv){
+        
+       $this->username = $mv->username;
+       $this->email = $mv->email;
+       $this->passhash = sha1($mv->password);
+       
         
     }
 
