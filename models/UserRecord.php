@@ -39,6 +39,40 @@ class UserRecord extends ActiveRecord{
        
         
     }
+    
+    public static function isExistsUsername($username){
+        return (static::find()->where(['username'=>$username])->count()>0);
+ 
+    }
+    
+     
+     public static function findUserByEmail($email){
+         static::findOne()->where(['email'=>$email]);
+    }
+    
+    
+    public function changeEmail(string $email){
+       
+        $this->email = $email; // заменяем e-mail
+        $this->save();
+        
+    }
+    
+    public function changePassword(string $password){
+        $this->passhash = sha1($password); // назначаем хеш по паролю
+        $this->save();
+    }
+    
+    public function forgetUser(){
+        $this->delete(); // удаляем текущего
+    }
+    
+  
+    
+    
+    
+    
+    
 
      
 

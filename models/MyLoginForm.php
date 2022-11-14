@@ -13,8 +13,9 @@ use yii\base\Model;
  */
 class MyLoginForm extends Model
 {
-    public $username;
-    public $password;
+    public   $username;
+    public   $password;
+    public   $rememberMe;
      
     private $_user = false;
 
@@ -27,6 +28,8 @@ class MyLoginForm extends Model
         return [
             // username and password are both required
             [['username', 'password' ], 'required'],
+            ['username', 'errorIfNoUsername', 
+               'message'=>"Такого пользователя нет"]
             // rememberMe must be a boolean value
            
             // password is validated by validatePassword()
@@ -59,7 +62,8 @@ class MyLoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+            return Yii::$app->user->login($this->getUser(), 
+                                $this->rememberMe ? 3600*24*30 : 0);
         }
         return false;
     }
@@ -76,5 +80,12 @@ class MyLoginForm extends Model
         };
 
         return $this->_user;
+    }
+    
+    public function errorIfNoUsername(){
+        if (!UserRecord::isExistsUsername($this->username))
+        {
+        $this->addError('username', 'Пользователь не найден');
+        };
     }
 }

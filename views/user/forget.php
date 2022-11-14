@@ -1,4 +1,4 @@
-<h1>Форма для входа</h1>
+<h1>Удаление пользователя</h1>
 <div class="panel panel-info">
     <div class='panel-heading'></div><!-- comment -->
 <div class='panel-body'>
@@ -9,15 +9,13 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 $form = ActiveForm::begin([
-    'id' => 'my-login-form',
+    'id' => 'my-forget-form',
     'options' => ['class' => 'form-horizontal'],
 ]) ?>
-    <?= $form->field($model, 'username') ?>
-    <?= $form->field($model, 'password')->passwordInput() ?>
-    <?= $form->field($model, 'rememberMe')->checkbox() ?>
+    <?= $form->field($model, 'confirmdelete')->checkbox() ?>
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Вход', ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton('Подтвердить удаление', ['class' => 'btn btn-primary']) ?>
         </div>
     </div>
 <?php ActiveForm::end() ?>

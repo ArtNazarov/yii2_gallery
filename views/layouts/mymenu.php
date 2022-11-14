@@ -32,7 +32,17 @@ $custom_links =    [
                         'label' => 'Выход (' . Yii::$app->user->identity->username . ')',
                         'url' => ['/user/logout'],
                        
-                   ]
+                   ],
+    
+                    [
+                        'label' => 'Личный кабинет (' . Yii::$app->user->identity->username . ')',
+                        'url' => ['/user/lk'],
+                       
+                   ],
+
+                 
+    
+    
                    ];
  }
  
