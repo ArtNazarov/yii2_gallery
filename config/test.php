@@ -12,7 +12,8 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    'language' => 'en-US',
+    'sourceLanguage' => 'tr',
+    'language' => 'en',
     'components' => [
         'db' => $db,
         'mailer' => [
@@ -26,7 +27,13 @@ return [
             'basePath' => __DIR__ . '/../web/assets',
         ],
         'urlManager' => [
-            'showScriptName' => true,
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['ru', 'en'],
+            'enableDefaultLanguageUrlCode' => true,
+            'rules' => [
+            ],
         ],
         'user' => [
             'identityClass' => 'app\models\User',

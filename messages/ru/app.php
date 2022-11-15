@@ -1,5 +1,5 @@
 <?php
-return
+define("RU_TRANSLATION",
 [ 
 
 UI_SITENAME => "Галерея",
@@ -32,7 +32,7 @@ UI_FORGET_FORM => "Удалить аккаунт",
 UI_FORGET_BUTTON => "Подтвердить удаление",
 
 UI_MENU_LOGIN_LINK => "Вход на сайт",
-UI_MENU_JOIN_LINK => "Вход на сайт",
+UI_MENU_JOIN_LINK => "Регистрация на сайте",
 UI_MENU_LK_LINK => "Личный кабинет",
 UI_MENU_LOGOUT_LINK => "Выход с сайта",
 
@@ -44,4 +44,6 @@ UI_PASSWORD_MUST_LONG => 'Пароль должен быть от 4 знаков
 UI_PASSWORDS_MUST_EQV => 'Не совпадают пароли',
 UI_EMAIL_ALREADY_EXISTS => 'e-mail используется',
 UI_USERNAME_MUST_LONG => "Имя должно быть от 3 до 10 символов",
-UI_MAGIC_ERROR => "Магическое имя" ];
+UI_MAGIC_ERROR => "Магическое имя"]);
+
+return RU_TRANSLATION;

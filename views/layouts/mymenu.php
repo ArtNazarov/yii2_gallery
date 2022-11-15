@@ -31,6 +31,7 @@ $custom_links =    [
                     [
                         'label' => Yii::t('app',UI_MENU_LOGOUT_LINK),
                         'url' => ['/user/logout'],
+                      
                        
                    ],
     

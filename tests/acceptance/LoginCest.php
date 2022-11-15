@@ -1,21 +1,35 @@
 <?php
-
+use yii;
 use yii\helpers\Url;
 
 class LoginCest
 {
-    public function ensureThatLoginWorks(AcceptanceTester $I)
+    public function ensureThatLoginWorks_en(AcceptanceTester $I)
     {
-        $I->amOnPage(Url::toRoute('/site/login'));
-        $I->see('Login', 'h1');
+        $I->wantTo('Тест на отображение формы входа на английском');
+        $I->amOnPage('/en/user/login');
+       
+        $I->seeInSource('Login'); // на странице входа должно быть название формы
+        
+        $I->fillField('#myloginform-username', 'tester');
+        $I->fillField('#myloginform-password', 'password');
 
-        $I->amGoingTo('try to login with correct credentials');
-        $I->fillField('input[name="LoginForm[username]"]', 'admin');
-        $I->fillField('input[name="LoginForm[password]"]', 'admin');
-        $I->click('login-button');
-        $I->wait(2); // wait for button to be clicked
-
-        $I->expectTo('see user info');
-        $I->see('Logout');
+         
     }
+    
+     public function ensureThatLoginWorks_ru(AcceptanceTester $I)
+     {
+        $I->wantTo('Тест на отображение формы входа на русском');
+
+        $I->amOnPage('/ru/user/login');
+         
+        $I->seeInSource('Войти'); // на странице входа должно быть название формы
+        
+        $I->fillField('#myloginform-username', 'tester');
+        $I->fillField('#myloginform-password', 'password');
+        
+    }
+    
+    
+   
 }

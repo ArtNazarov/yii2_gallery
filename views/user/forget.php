@@ -15,7 +15,7 @@ $form = ActiveForm::begin([
     <?= $form->field($model, 'confirmdelete')->checkbox() ?>
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton(Yii::t('app', UI_FORGET_), ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton(Yii::t('app', UI_FORGET_), ['id'=>'btn-forget-submit','class' => 'btn btn-primary']) ?>
         </div>
     </div>
 <?php ActiveForm::end() ?>

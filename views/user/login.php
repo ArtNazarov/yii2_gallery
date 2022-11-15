@@ -20,7 +20,7 @@ $form = ActiveForm::begin([
     <?= $form->field($model, 'rememberMe')->checkbox() ?>
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton( Yii::t('app', UI_LOGIN_BUTTON), ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton( Yii::t('app', UI_LOGIN_BUTTON) , [ 'id' => 'btn-login-submit', 'class' => 'btn btn-primary']) ?>
         </div>
     </div>
 <?php ActiveForm::end() ?>
