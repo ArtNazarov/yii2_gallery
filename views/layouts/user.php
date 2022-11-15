@@ -19,6 +19,7 @@ use yii\bootstrap5\Nav
      <?php include(__DIR__ . '/mymenu.php'); ?>
 
      <?= $content ?>
+   <?php include(__DIR__ . '/footer.php'); ?>
 
 <?php $this->endBody() ?>
 </body>

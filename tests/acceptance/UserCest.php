@@ -1,6 +1,7 @@
 <?php
 
 use yii;
+use yii\db\Query;
 use yii\helpers\Url;
 use app\models\UserRecord;
 use app\models\User;
@@ -62,9 +63,11 @@ class UserCest
         $I->wait(5);   
         $I->dontSee('testerX');
         // clean base
-        $user = new UserRecord();
-        $user = UserRecord::findOne(['username'=>'testerX']);
-        $user->delete();
+
+$testerX = UserRecord::find()
+  ->where(['email'=>'testx@test.ru'])
+  ->one()
+  ->delete();        
        
     }
  

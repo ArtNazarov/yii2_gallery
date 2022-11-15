@@ -47,7 +47,7 @@ class UserRecord extends ActiveRecord{
     
      
      public static function findUserByEmail($email){
-         static::findOne()->where(['email'=>$email]);
+         return static::findOne()->where(['email'=>$email]);
     }
     
     
@@ -66,6 +66,40 @@ class UserRecord extends ActiveRecord{
     public function forgetUser(){
         $this->delete(); // удаляем текущего
     }
+    
+    
+    function add_user($username, $password, $email){
+
+            $this->username = $username;
+            $this->passhash = sha1($password);
+            $this->email = $email;
+            $this->save();
+
+}
+
+function remove_by_email($email){
+$this->load(  static::findOne(['email'=>$email]) );
+$this->delete(); 
+}
+
+function remove_by_username($username){
+$this->load (  static::findOne(['username'=>$username]) );
+$this->delete();
+}
+
+function update_pass_by_username($username, $new_password){
+$this->load(   static::findOne(['username'=>$username]) );
+$this->passhash = sha1($new_password); 
+$this->save(); 
+}
+
+
+function update_pass_by_email($emaul, $new_password){
+$this->load( static::findOne(['email'=>$email] ));
+$this->passhash = sha1($new_password); 
+$this->save(); 
+}
+
     
   
     
