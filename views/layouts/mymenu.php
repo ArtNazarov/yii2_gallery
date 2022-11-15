@@ -58,7 +58,7 @@ $custom_links =    [
             array_push($full_menu, $custom_links[$i]);
  };
  
-    NavBar::begin(['brandLabel' => Yii::t('app', UI_)]);
+    NavBar::begin(['brandLabel' => Yii::t('app', UI_SITENAME)]);
 echo Nav::widget([
      'items' => $full_menu, 
     'options' => ['class' => 'navbar-nav'],
