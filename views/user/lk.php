@@ -1,8 +1,8 @@
-<h1><?= UI_LK ?></h1>
+<h1><?= Yii::t('app', 'UI_LK'); ?></h1>
 
-<?= UI_LK_USERNAME ?>: <?php echo $lk['username']; ?><br/>
+<?= Yii::t('app','UI_LK_USERNAME'); ?>: <?php echo $lk['username']; ?><br/>
 
-<a href="/user/setemail/"><?= UI_LK_SETEMAIL_LINK ?></a><br/>
-<a href="/user/setpassword/"><?= UI_LK_SETPASSWORD_LINK ?></a><br/><!-- comment -->
+<a href="/user/setemail/"><?= Yii::t('app', 'UI_LK_SETEMAIL_LINK'); ?></a><br/>
+<a href="/user/setpassword/"><?= Yii::t('app', 'UI_LK_SETPASSWORD_LINK'); ?></a><br/><!-- comment -->
 <hr/>
-<a href="/user/forget/"><?= UI_LK_FORGET_LINK ?></a>
+<a href="/user/forget/"><?= Yii::t('app','UI_LK_FORGET_LINK'); ?></a>

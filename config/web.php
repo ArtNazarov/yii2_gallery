@@ -4,6 +4,8 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
+    'sourceLanguage' => 'tr',
+    'language' => 'en',
     'id' => 'basic',
     'defaultRoute' => 'book/greeter',
     'basePath' => dirname(__DIR__),

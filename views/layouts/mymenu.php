@@ -9,18 +9,18 @@ use yii\bootstrap5\NavBar;
 
 $basic_links = [
  
-    ['label' => UI_MENU_MAIN_LINK, 'url' => ['/book/greeter']]
+    ['label' => Yii::t('app','UI_MENU_MAIN_LINK'), 'url' => ['/book/greeter']]
     ];
 
 
 if (Yii::$app->user->isGuest) { 
 $custom_links = [
               [
-                  'label' => UI_MENU_LOGIN_LINK, 
+                  'label' => Yii::t('app', 'UI_MENU_LOGIN_LINK'), 
                   'url' => ['/user/login']
               ],
              [
-                 'label' =>  UI_MENU_JOIN_LINK, 
+                 'label' =>  Yii::t('app','UI_MENU_JOIN_LINK'), 
                  'url' => ['/user/join']
              ]
     ];
@@ -29,13 +29,13 @@ $custom_links = [
  {
 $custom_links =    [
                     [
-                        'label' => UI_MENU_LOGOUT_LINK,
+                        'label' => Yii::t('app','UI_MENU_LOGOUT_LINK'),
                         'url' => ['/user/logout'],
                        
                    ],
     
                     [
-                        'label' => UI_MENU_LK_LINK . '(' . Yii::$app->user->identity->username . ')',
+                        'label' => Yii::t('app', 'UI_MENU_LK_LINK') . '(' . Yii::$app->user->identity->username . ')',
                         'url' => ['/user/lk'],
                        
                    ],
@@ -58,7 +58,7 @@ $custom_links =    [
             array_push($full_menu, $custom_links[$i]);
  };
  
-    NavBar::begin(['brandLabel' => UI_SITENAME]);
+    NavBar::begin(['brandLabel' => Yii::t('app', 'UI_SITENAME')]);
 echo Nav::widget([
      'items' => $full_menu, 
     'options' => ['class' => 'navbar-nav'],
