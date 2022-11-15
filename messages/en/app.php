@@ -44,6 +44,13 @@ UI_PASSWORD_MUST_LONG => 'Little password, need more 4 symbols',
 UI_PASSWORDS_MUST_EQV => 'Passwords not match',
 UI_EMAIL_ALREADY_EXISTS => 'e-mail already in use',
 UI_USERNAME_MUST_LONG => "Name must be from 3 to 10 letters",
-UI_MAGIC_ERROR => "No magic names"]);
+UI_MAGIC_ERROR => "No magic names",
+UI_LK_NEWMATERIAL_LINK => 'Add new material', 
+UI_NEWMATERIAL_FORM => 'New material',
+UI_NEWMATERIAL_BUTTON => 'Post to site' ,  
+UI_LK_MYMATERIALS_LINK => 'My materials on website'    
+    
+    
+    ]);
 
 return EN_TRANSLATION;

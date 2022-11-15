@@ -17,7 +17,7 @@ class MaterialRecord extends ActiveRecord{
     
     
     
-    public function getFromForm(MyPictureForm $mv, $user_id){
+    public function getFromForm(MyMaterialForm $mv, $user_id){
         
        $this->title = $mv->title;
        $this->message = $mv->message;

@@ -7,6 +7,7 @@ namespace app\controllers;
 use yii\web\Controller;
 use app\models\MaterialRecord;
 use app\models\UserRecord;
+use app\models\MyMaterialForm;
  
 class MaterialController extends Controller {
     
@@ -79,6 +80,54 @@ class MaterialController extends Controller {
                          ]
                             );
                        
+        
+    }
+    
+    
+    public function actionAdditem(){
+        if (\Yii::$app->user->isGuest) { exit(0); };
+        /*
+        $userRecord = new UserRecord();
+        $userRecord->setTestUser();
+        $userRecord->save();
+        */
+        
+        if (yii::$app->request->isPost)
+            return $this->actionAdditemPost();
+        
+       
+         
+        $userRecord = new UserRecord();
+        $userRecord =  UserRecord::findOne( ['id' => \Yii::$app->user->identity->id ]);
+       
+        
+        
+        
+        
+        $mv = new MyMaterialForm();
+        
+        $mv->username = $userRecord->username;
+         
+        return $this->render('newmaterial',
+                ['model'=>$mv]);
+    }
+    
+    // если данные пришли, обработка
+    public function actionAdditemPost(){
+        
+      $mv = new MyMaterialForm(); 
+      $mv->load(yii::$app->request->post());
+      
+      if ($mv->validate()) {
+         
+         $materialRecord = new MaterialRecord();
+         $materialRecord->getFromForm($mv, \Yii::$app->user->identity->id);
+         $materialRecord->save();
+         $this->redirect('/'); // перенаправили на главную страницу
+      }
+      
+       return $this->render('newmaterial',
+                ['model'=>$mv]);
         
     }
     

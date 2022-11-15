@@ -44,6 +44,13 @@ UI_PASSWORD_MUST_LONG => 'Пароль должен быть от 4 знаков
 UI_PASSWORDS_MUST_EQV => 'Не совпадают пароли',
 UI_EMAIL_ALREADY_EXISTS => 'e-mail используется',
 UI_USERNAME_MUST_LONG => "Имя должно быть от 3 до 10 символов",
-UI_MAGIC_ERROR => "Магическое имя"]);
+UI_MAGIC_ERROR => "Магическое имя",
+    
+UI_LK_NEWMATERIAL_LINK => 'Добавить новый материал', 
+UI_NEWMATERIAL_FORM => 'Создание нового материала',
+UI_NEWMATERIAL_BUTTON => 'Добавить на сайт',
+UI_LK_MYMATERIALS_LINK => 'Мои материалы на сайте'    
+    
+    ]);
 
 return RU_TRANSLATION;
