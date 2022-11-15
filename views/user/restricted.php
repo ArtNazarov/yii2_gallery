@@ -1,1 +1,1 @@
-<?= Yii::t('app', 'UI_ACCESS_DENIED'); ?>
+<?= Yii::t('app', UI_ACCESS_DENIED); ?>

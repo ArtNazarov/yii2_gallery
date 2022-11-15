@@ -1,45 +1,45 @@
 <?php
-define("UI_SITENAME", "Галерея");
-define("UI_MENU_MAIN_LINK", 'Картины');
+define("UI_SITENAME", "UI_SITENAME");
+define("UI_MENU_MAIN_LINK", 'UI_MENU_MAIN_LINK');
 
-define("UI_ACCESS_DENIED", "Ограниченный доступ");
+define("UI_ACCESS_DENIED", "UI_ACCESS_DENIED");
 
-define("UI_LOGIN_FORM", "Форма для входа");
-define("UI_LOGIN_BUTTON", "Войти на сайт");
+define("UI_LOGIN_FORM", "UI_LOGIN_FORM");
+define("UI_LOGIN_BUTTON", "UI_LOGIN_BUTTON");
 
-define("UI_JOIN_FORM", "Форма для регистрации");
-define("UI_JOIN_BUTTON", "Зарегистрироваться");
+define("UI_JOIN_FORM", "UI_JOIN_FORM");
+define("UI_JOIN_BUTTON", "UI_JOIN_BUTTON");
 
-define("UI_SETEMAIL_FORM", "Смена email");
-define("UI_SETEMAIL_BUTTON", "Изменить почту");
+define("UI_SETEMAIL_FORM", "UI_SETEMAIL_FORM");
+define("UI_SETEMAIL_BUTTON", "UI_SETEMAIL_BUTTON");
 
-define("UI_SETPASSWORD_FORM", "Смена пароля");
-define("UI_SETPASSWORD_BUTTON", "Изменить пароль");
+define("UI_SETPASSWORD_FORM", "UI_SETPASSWORD_FORM");
+define("UI_SETPASSWORD_BUTTON", "UI_SETPASSWORD_BUTTON");
 
-define("UI_LK", "Личный кабинет");
+define("UI_LK", "UI_LK");
 
-define("UI_LK_USERNAME", "Имя пользователя");
-define("UI_LK_SETEMAIL_LINK", "Сменить почту");
-define("UI_LK_SETPASSWORD_LINK", "Сменить пароль");
-define("UI_LK_FORGET_LINK", "Удалить аккаунт");
+define("UI_LK_USERNAME", "UI_LK_USERNAME");
+define("UI_LK_SETEMAIL_LINK", "UI_LK_SETEMAIL_LINK");
+define("UI_LK_SETPASSWORD_LINK", "UI_LK_SETPASSWORD_LINK");
+define("UI_LK_FORGET_LINK", "UI_LK_FORGET_LINK");
 
 
-define("UI_FORGET_FORM", "Удалить аккаунт");
-define("UI_FORGET_BUTTON", "Подтвердить удаление");
+define("UI_FORGET_FORM", "UI_FORGET_FORM");
+define("UI_FORGET_BUTTON", "UI_FORGET_BUTTON");
 
-define("UI_MENU_LOGIN_LINK", "Вход на сайт");
-define("UI_MENU_JOIN_LINK", "Вход на сайт");
-define("UI_MENU_LK_LINK", "Личный кабинет");
-define("UI_MENU_LOGOUT_LINK", "Выход с сайта");
+define("UI_MENU_LOGIN_LINK", "UI_MENU_LOGIN_LINK");
+define("UI_MENU_JOIN_LINK", "UI_MENU_JOIN_LINK");
+define("UI_MENU_LK_LINK", "UI_MENU_LK_LINK");
+define("UI_MENU_LOGOUT_LINK", "UI_MENU_LOGOUT_LINK");
 
-define("UI_NO_USER_IN_BASE", "Такого пользователя нет");
+define("UI_NO_USER_IN_BASE", "UI_NO_USER_IN_BASE");
 
-define("UI_FIELDS_MUST_NOT_NULL", 'Поля не должны быть пусты');
-define("UI_EMAIL_MUST_CORRECT", 'Адрес электропочты не верен');
-define("UI_PASSWORD_MUST_LONG", 'Пароль должен быть от 4 знаков');
-define("UI_PASSWORDS_MUST_EQV", 'Не совпадают пароли');
-define("UI_EMAIL_ALREADY_EXISTS", 'e-mail используется');
-define("UI_USERNAME_MUST_LONG", "Имя должно быть от 3 до 10 символов");
-define("UI_MAGIC_ERROR", "Магическое имя");
+define("UI_FIELDS_MUST_NOT_NULL", 'UI_FIELDS_MUST_NOT_NULL');
+define("UI_EMAIL_MUST_CORRECT", 'UI_EMAIL_MUST_CORRECT');
+define("UI_PASSWORD_MUST_LONG", 'UI_PASSWORD_MUST_LONG');
+define("UI_PASSWORDS_MUST_EQV", 'UI_PASSWORDS_MUST_EQV');
+define("UI_EMAIL_ALREADY_EXISTS", 'UI_EMAIL_ALREADY_EXISTS');
+define("UI_USERNAME_MUST_LONG", "UI_USERNAME_MUST_LONG");
+define("UI_MAGIC_ERROR", "UI_MAGIC_ERROR");
  
 ?>
