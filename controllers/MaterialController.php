@@ -8,6 +8,7 @@ use yii\web\Controller;
 use app\models\MaterialRecord;
 use app\models\UserRecord;
 use app\models\MyMaterialForm;
+use yii\data\Pagination;
  
 class MaterialController extends Controller {
     
@@ -17,11 +18,23 @@ class MaterialController extends Controller {
         
         
          
-        $materials_collection = MaterialRecord::find()->all();
+       // $materials_collection = MaterialRecord::find()->all();
        
+    $query = MaterialRecord::find();
+    $countQuery = clone $query;
+    $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>2]);
+    $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
+    
+    
+
+    
+        
+        
         $materials = [];
         
-        foreach ($materials_collection as $material){
+        foreach ($models as $material){
             $materials[] =  [
                 'title' => $material->title,
                 'message' => $material->message,
@@ -33,7 +46,8 @@ class MaterialController extends Controller {
         
                return $this->render('exposition',
                         [ 
-                          'arts' => $materials 
+                          'arts' => $materials,
+                          'pages' => $pages
                          ]
                             );
                        

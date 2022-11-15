@@ -1,4 +1,4 @@
-
+<?php use yii\bootstrap5\LinkPager; ?>
 
 <?php foreach($arts as $item): ?>
 
@@ -8,3 +8,9 @@
              <img width='320' src='<?= $item['img_src'] ?>' /> 
   
 <?php endforeach; ?>
+
+<?php
+echo LinkPager::widget([
+    'pagination' => $pages,
+]); 
+?>
