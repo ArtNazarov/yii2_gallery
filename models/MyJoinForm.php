@@ -29,18 +29,18 @@ class MyJoinForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password', 'password2', 'email'], 'required', 'message'=> 'Поля не должны быть пусты'],
-            ['username', 'string', 'min'=>3, 'max'=>10, 'message'=>"Имя должно быть от 3 до 10 символов"],
-            ['email', 'email', 'message'=>'Адрес электропочты не верен'],
-            ['password', 'string', 'min'=>4, 'message'=>'Пароль должен быть от 4 знаков'],
-            ['password2', 'compare', 'compareAttribute'=>'password', 'message'=>'Не совпадают пароли'],
+            [['username', 'password', 'password2', 'email'], 'required', 'message'=> UI_FIELDS_MUST_NOT_NULL],
+            ['username', 'string', 'min'=>3, 'max'=>10, 'message'=>UI_USERNAME_MUST_LONG],
+            ['email', 'email', 'message'=>UI_EMAIL_MUST_CORRECT],
+            ['password', 'string', 'min'=>4, 'message'=> UI_PASSWORD_MUST_LONG],
+            ['password2', 'compare', 'compareAttribute'=>'password', 'message'=>UI_PASSWORDS_MUST_EQV],
             // rememberMe must be a boolean value
            
             // password is validated by validatePassword()
             
             ['username', 'errorIfMagic', 
                 'message'=>'magic'],
-            ['email', 'errorIfEmailUsed', 'message'=>'e-mail используется']
+            ['email', 'errorIfEmailUsed', 'message'=>UI_EMAIL_ALREADY_EXISTS]
         ];
     }
 
@@ -101,7 +101,7 @@ class MyJoinForm extends Model
         
         if (UserRecord::isExistsEmail($this->email))
         {
-        $this->addError('email', 'Этот e-mail уже используется');
+        $this->addError('email', UI_EMAIL_ALREADY_EXISTS);
         };
         
         }
@@ -110,7 +110,7 @@ class MyJoinForm extends Model
        
         
         if ($this->username === 'magic'){
-            $this->addError('username', 'magic error');
+            $this->addError('username', UI_MAGIC_ERROR);
         }
         
         }

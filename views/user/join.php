@@ -1,4 +1,5 @@
-<h1>Join</h1>
+ 
+<h1><?= UI_JOIN_FORM ?></h1>
 <div class="panel panel-info">
     <div class='panel-heading'></div><!-- comment -->
 </div class='panel-body'>
@@ -19,7 +20,7 @@ $form = ActiveForm::begin([
     
    <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Регистрация', ['class' => 'btn btn-primary']) ?>
+            <?= Html::submitButton(UI_JOIN_BUTTON, ['class' => 'btn btn-primary']) ?>
         </div>
     </div>
 <?php ActiveForm::end() ?>

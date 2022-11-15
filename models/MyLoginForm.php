@@ -29,7 +29,7 @@ class MyLoginForm extends Model
             // username and password are both required
             [['username', 'password' ], 'required'],
             ['username', 'errorIfNoUsername', 
-               'message'=>"Такого пользователя нет"]
+               'message'=>UI_NO_USER_IN_BASE]
             // rememberMe must be a boolean value
            
             // password is validated by validatePassword()
@@ -85,7 +85,7 @@ class MyLoginForm extends Model
     public function errorIfNoUsername(){
         if (!UserRecord::isExistsUsername($this->username))
         {
-        $this->addError('username', 'Пользователь не найден');
+        $this->addError('username', UI_NO_USER_IN_BASE);
         };
     }
 }

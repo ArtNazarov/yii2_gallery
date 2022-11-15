@@ -27,7 +27,7 @@ class MySetPasswordForm extends Model
         return [
              ['password', 'required'],
              ['password2', 'required'],
-             ['password2', 'compare', 'compareAttribute'=>'password', 'message'=>'Не совпадают пароли']
+             ['password2', 'compare', 'compareAttribute'=>'password', 'message'=>UI_PASSWORDS_MUST_EQV]
             
         ];
     }

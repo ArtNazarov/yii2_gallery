@@ -1,5 +1,5 @@
 <?php
-
+ require $_SERVER['DOCUMENT_ROOT'] . '/lang/ui.php'; 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 

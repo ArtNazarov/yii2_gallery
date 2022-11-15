@@ -1,5 +1,5 @@
 <?php
-
+require_once $_SERVER['DOCUMENT_ROOT'] .'/lang/ui.php';
 use app\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap5\Breadcrumbs;
@@ -9,18 +9,18 @@ use yii\bootstrap5\NavBar;
 
 $basic_links = [
  
-    ['label' => 'Картины', 'url' => ['/book/greeter']]
+    ['label' => UI_MENU_MAIN_LINK, 'url' => ['/book/greeter']]
     ];
 
 
 if (Yii::$app->user->isGuest) { 
 $custom_links = [
               [
-                  'label' => 'Вход', 
+                  'label' => UI_MENU_LOGIN_LINK, 
                   'url' => ['/user/login']
               ],
              [
-                 'label' => 'Регистрация', 
+                 'label' =>  UI_MENU_JOIN_LINK, 
                  'url' => ['/user/join']
              ]
     ];
@@ -29,13 +29,13 @@ $custom_links = [
  {
 $custom_links =    [
                     [
-                        'label' => 'Выход (' . Yii::$app->user->identity->username . ')',
+                        'label' => UI_MENU_LOGOUT_LINK,
                         'url' => ['/user/logout'],
                        
                    ],
     
                     [
-                        'label' => 'Личный кабинет (' . Yii::$app->user->identity->username . ')',
+                        'label' => UI_MENU_LK_LINK . '(' . Yii::$app->user->identity->username . ')',
                         'url' => ['/user/lk'],
                        
                    ],
@@ -58,7 +58,7 @@ $custom_links =    [
             array_push($full_menu, $custom_links[$i]);
  };
  
-    NavBar::begin(['brandLabel' => 'Галерея']);
+    NavBar::begin(['brandLabel' => UI_SITENAME]);
 echo Nav::widget([
      'items' => $full_menu, 
     'options' => ['class' => 'navbar-nav'],

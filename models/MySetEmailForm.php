@@ -26,7 +26,7 @@ class MySetEmailForm extends Model
         return [
              ['email', 'required'],
             ['email', 'email', 
-               'message'=>"Укажите верный email"]
+               'message'=> UI_EMAIL_MUST_CORRECT]
             
              
         ];

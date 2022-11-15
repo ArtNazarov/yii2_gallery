@@ -1,8 +1,8 @@
-<h1>Личный кабинет</h1>
+<h1><?= UI_LK ?></h1>
 
-Имя пользователя: <?php echo $lk['username']; ?><br/>
+<?= UI_LK_USERNAME ?>: <?php echo $lk['username']; ?><br/>
 
-<a href="/user/setemail/">Сменить почту</a><br/>
-<a href="/user/setpassword/">Сменить пароль</a><br/><!-- comment -->
+<a href="/user/setemail/"><?= UI_LK_SETEMAIL_LINK ?></a><br/>
+<a href="/user/setpassword/"><?= UI_LK_SETPASSWORD_LINK ?></a><br/><!-- comment -->
 <hr/>
-<a href="/user/forget/">Удалить аккаунт</a>
+<a href="/user/forget/"><?= UI_LK_FORGET_LINK ?></a>
