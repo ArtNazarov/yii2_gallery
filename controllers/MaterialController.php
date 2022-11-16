@@ -104,6 +104,20 @@ class MaterialController extends Controller {
        return $this->render('view', ['picture'=>$picture]);
     }
     
+    public function actionDelete(){
+        
+        $picture_id = Yii::$app->request->get('picture_id',0);
+        if ($picture_id === 0) 
+            return $this->render('nopicture'); // если не передан номер
+        
+        $userRecord = new UserRecord();
+        $userRecord =  UserRecord::findOne( ['id' => \Yii::$app->user->identity->id ]);
+        
+        MaterialRecord::deletePictureById($userRecord->id, $picture_id);
+        
+        $this->redirect('/material/gallery?username=' . $userRecord->username);
+    }
+    
     
     
     

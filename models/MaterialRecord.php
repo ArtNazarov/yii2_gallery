@@ -164,16 +164,22 @@ public static function fetchAll(){
          $data = MaterialRecord::findOne($picture_id);
          $userinfo = UserRecord::findOne($data->user_id);
          $result = [
-           'id' => $data['id'],
+           'picture_id' => $data['id'],
            'title' => $data['title'],
            'message' => $data['message'],
            'img_src' => $data['img_src'],
-           'username' => $userinfo['username']
+           'username' => $userinfo['username'],
+           'user_id' => $userinfo['id']
          ];
          return $result;
          
          
 
+ }
+ 
+ public static function deletePictureById($user_id, $picture_id){
+     $data = MaterialRecord::findOne($picture_id);
+     if ($data->user_id == $user_id) { $data->delete(); };
  }
     
     
