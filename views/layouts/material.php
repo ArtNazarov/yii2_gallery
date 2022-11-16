@@ -1,8 +1,11 @@
 <?php
 use yii\bootstrap5\Html;
 use yii\bootstrap5\NavBar;
-use yii\bootstrap5\Nav
+use yii\bootstrap5\Nav;
+use app\components\MainMenuWidget;
+use app\components\SearchWidget;
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
@@ -16,9 +19,7 @@ use yii\bootstrap5\Nav
     </head>
     <body style="background-color:white">
      
-   <?php include(__DIR__ . '/mymenu.php'); ?>
-        
-   <?php use app\components\SearchWidget; ?>
+    <?= MainMenuWidget::widget(); ?>
     <?= SearchWidget::widget(); ?>     
         
         

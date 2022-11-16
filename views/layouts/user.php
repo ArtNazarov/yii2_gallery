@@ -1,7 +1,8 @@
 <?php
 use yii\bootstrap5\Html;
 use yii\bootstrap5\NavBar;
-use yii\bootstrap5\Nav
+use yii\bootstrap5\Nav;
+use app\components\MainMenuWidget;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ use yii\bootstrap5\Nav
     </head>
     <body style="background-color:#E1DFE1">
      
-     <?php include(__DIR__ . '/mymenu.php'); ?>
+    <?= MainMenuWidget::widget(); ?>
 
      <?= $content ?>
    <?php include(__DIR__ . '/footer.php'); ?>
