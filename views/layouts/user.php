@@ -3,6 +3,8 @@ use yii\bootstrap5\Html;
 use yii\bootstrap5\NavBar;
 use yii\bootstrap5\Nav;
 use app\components\MainMenuWidget;
+use app\components\FooterWidget;
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -20,7 +22,9 @@ use app\components\MainMenuWidget;
     <?= MainMenuWidget::widget(); ?>
 
      <?= $content ?>
-   <?php include(__DIR__ . '/footer.php'); ?>
+        
+   <?= FooterWidget::widget(); ?>
+
 
 <?php $this->endBody() ?>
 </body>
