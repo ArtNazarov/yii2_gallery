@@ -48,7 +48,8 @@ class UserController extends Controller {
         $mv = new MyJoinForm();
         
         //$mv->setUserRecord($userRecord);
-        
+        Yii::$app->view->title = Yii::t('app', UI_JOIN_FORM);
+
         return $this->render('join',
                 ['model'=>$mv]);
     }
@@ -67,6 +68,8 @@ class UserController extends Controller {
          $this->redirect('/'); // перенаправили на главную страницу
       }
       
+       Yii::$app->view->title = Yii::t('app', UI_JOIN_FORM);
+
        return $this->render('join',
                 ['model'=>$mv]);
         
@@ -79,7 +82,8 @@ class UserController extends Controller {
         
         $mv = new MyLoginForm();
         
-         
+        Yii::$app->view->title = Yii::t('app', UI_LOGIN_FORM);
+
         return $this->render('login',
                 ['model'=> $mv]);
         
@@ -110,7 +114,8 @@ class UserController extends Controller {
         }
          
          
-          
+        Yii::$app->view->title = Yii::t('app', UI_LOGIN_FORM);
+   
         return $this->render('login',
                 ['model'=> $mv]);      
           
@@ -148,7 +153,9 @@ class UserController extends Controller {
             return $this->actionSetpasswordPost();
         
         $mv = new MySetPasswordForm();
-        
+       
+        Yii::$app->view->title = Yii::t('app', UI_SETPASSWORD_FORM);
+
         return $this->render('/user/setpassword', ['model'=>$mv]);
     }
     
@@ -175,6 +182,9 @@ class UserController extends Controller {
         if (yii::$app->request->isPost)
             return $this->actionSetemailPost();
        $mv = new  MySetEmailForm(); 
+       
+       Yii::$app->view->title = Yii::t('app', UI_SETEMAIL_FORM);
+
        return $this->render('/user/setemail', ['model'=> $mv]);
     }
     
@@ -194,6 +204,9 @@ class UserController extends Controller {
          if (yii::$app->request->isPost)
             return $this->actionForgetPost();
         $mv = new MyForgetForm();
+        
+        Yii::$app->view->title = Yii::t('app', UI_FORGET_FORM);
+
         return $this->render('forget', ['model'=>$mv]);
     }
     
@@ -219,6 +232,9 @@ class UserController extends Controller {
         $this->redirectToRestriced();
         $lk = ['username'=>'test'];
         $lk['username'] =  Yii::$app->user->identity->username;
+        
+        Yii::$app->view->title = Yii::t('app', UI_LK_FORM);
+
         return $this->render('/user/lk', ['lk'=>$lk]);
     }
     

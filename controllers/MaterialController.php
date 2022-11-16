@@ -22,6 +22,8 @@ class MaterialController extends Controller {
          
        // $materials_collection = MaterialRecord::find()->all();
        $data = MaterialRecord::fetchAll(); 
+       
+       Yii::$app->view->title = Yii::t('app', UI_FULLGALLERY);
        return $this->render('exposition', $data);
     }
     
@@ -37,6 +39,8 @@ class MaterialController extends Controller {
         $data = MaterialRecord::getAllByUsername($username);
         
         
+        Yii::$app->view->title = Yii::t('app', UI_USERGALLERY);
+
         return $this->render('gallery',
                         [ 
                           'username' => $username,  
@@ -73,6 +77,8 @@ class MaterialController extends Controller {
         
         $mv->username = $userRecord->username;
          
+        Yii::$app->view->title = Yii::t('app', UI_NEWMATERIAL_FORM);
+
         return $this->render('newmaterial',
                 ['model'=>$mv]);
     }
@@ -91,6 +97,9 @@ class MaterialController extends Controller {
          $this->redirect('/'); // перенаправили на главную страницу
       }
       
+      
+      Yii::$app->view->title = Yii::t('app', UI_NEWMATERIAL_FORM);
+
        return $this->render('newmaterial',
                 ['model'=>$mv]);
         
@@ -103,6 +112,9 @@ class MaterialController extends Controller {
             return $this->render('nopicture'); // если не передан номер
         $picture = MaterialRecord::getPictureById($picture_id);
         
+        
+       Yii::$app->view->title = Yii::t('app', UI_SITENAME) . ' ' . $picture['title'];
+ 
        return $this->render('view', ['picture'=>$picture]);
     }
     
@@ -114,7 +126,8 @@ class MaterialController extends Controller {
         
         $data = MaterialRecord::searchByText($searchtext);
         
-         
+        Yii::$app->view->title = Yii::t('app', UI_SITENAME) . ' ' . Yii::t('app', UI_SEARCH_FORM);
+ 
         return $this->render('searchmaterial',
                             [
                                 'arts' => $data['arts'],
