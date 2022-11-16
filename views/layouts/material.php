@@ -14,7 +14,7 @@ use yii\bootstrap5\Nav
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body style="background-color:gold">
+    <body style="background-color:white">
      
    <?php include(__DIR__ . '/mymenu.php'); ?>
         
