@@ -160,6 +160,9 @@ public static function fetchAll(){
   
  } 
  
+  
+ 
+ 
  public static function getPictureById($picture_id){
          $data = MaterialRecord::findOne($picture_id);
          $userinfo = UserRecord::findOne($data->user_id);
@@ -177,12 +180,45 @@ public static function fetchAll(){
 
  }
  
+ 
+ 
  public static function deletePictureById($user_id, $picture_id){
      $data = MaterialRecord::findOne($picture_id);
      if ($data->user_id == $user_id) { $data->delete(); };
  }
     
+ public static function searchByText($searchtext){
+      
+             
+    $query = MaterialRecord::find()->where(['like', 'title', $searchtext])->orWhere(['like', 'message', $searchtext]);
+    $countQuery = clone $query;
+    $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>MATERIAL_PAGE_SIZE]);
+    $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
     
+     
+    
+           
+        
+         
+        $materials = [];
+        
+        foreach ($models as $material){
+            $materials[] =  [
+                'picture_id' => $material->id,
+                'title' => $material->title,
+                'message' => $material->message,
+                'img_src' => $material->img_src
+                            ];
+        } 
+        
+        return [
+                    'arts' => $materials,
+                    'pages' => $pages
+        ];
+
+ }   
     
     
 

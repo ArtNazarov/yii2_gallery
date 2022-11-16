@@ -6,6 +6,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use app\components\SearchWidget;
 
 $basic_links = [
  
@@ -70,3 +71,9 @@ echo Nav::widget([
 ]);
 NavBar::end();
 ?>
+
+<form name='search' method='get' action='/material/search'>
+    <label for='searchtext'>Поиск по сайту</label>
+    <input type='text' name='searchtext' id='searchtext' placeholder='Поиск'>
+    <input type='submit' value='Поиск'>
+</form>

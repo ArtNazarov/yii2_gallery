@@ -50,7 +50,9 @@ UI_NEWMATERIAL_FORM => 'New material',
 UI_NEWMATERIAL_BUTTON => 'Post to site' ,  
 UI_LK_MYMATERIALS_LINK => 'My materials on website',   
 UI_USERGALLERY => 'Pictures of ',    
-UI_FULLGALLERY => 'All pictures'        
+UI_FULLGALLERY => 'All pictures',
+UI_SEARCHMATERIALS => 'Search material on site'
+
     ]);
 
 return EN_TRANSLATION;

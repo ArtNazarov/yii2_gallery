@@ -8,11 +8,12 @@ use yii\web\Controller;
 use app\models\MaterialRecord;
 use app\models\UserRecord;
 use app\models\MyMaterialForm;
-
+use  \app\models\MySearchForm;
  
 class MaterialController extends Controller {
     
     public $layout = 'material';
+    
     
     public function actionExposition(){
         
@@ -102,6 +103,22 @@ class MaterialController extends Controller {
         $picture = MaterialRecord::getPictureById($picture_id);
         
        return $this->render('view', ['picture'=>$picture]);
+    }
+    
+    
+    public function actionSearch(){
+        $searchtext = Yii::$app->request->get('searchtext',"");
+        if ($searchtext === "") 
+            return $this->render('nosearchtext'); // если не передана поисковая фраза
+        
+        $data = MaterialRecord::searchByText($searchtext);
+        
+         
+        return $this->render('searchmaterial',
+                            [
+                                'arts' => $data['arts'],
+                                'pages'=> $data['pages']
+                            ]);
     }
     
     public function actionDelete(){
