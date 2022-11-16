@@ -9,7 +9,7 @@
 
 <img src="<?= $picture['img_src'] ?>">             
 
-<p><?= Html::a($picture['username'], '/material/gallery?username=' . $picture['username']) ?></p>
+<p><?= Html::a($picture['username'], '/material/gallery/' . $picture['username']) ?></p>
 
 <?php if (\Yii::$app->user->isGuest) {
     $html = 'Login to edit picture';

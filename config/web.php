@@ -53,6 +53,8 @@ $config = [
             'languages' => ['ru', 'en'],
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
+                'material/view/<picture_id:\d+>' => 'material/view',
+                'material/gallery/<username:\w+>' => 'material/gallery'
             ],
         ],
          

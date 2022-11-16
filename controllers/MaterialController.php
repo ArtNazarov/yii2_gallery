@@ -28,10 +28,8 @@ class MaterialController extends Controller {
     }
     
     
-     public function actionGallery(){
+     public function actionGallery($username){
 
-         // получим имя пользователя
-        $username = Yii::$app->request->get('username','');
         if ($username === "") 
             return $this->render('nousername'); // если пустое досрочный выход
         
@@ -105,7 +103,9 @@ class MaterialController extends Controller {
         
     }
     
-    public function actionView(){
+    public function actionView($picture_id){
+        
+         
          // получим номер картинки
         $picture_id = Yii::$app->request->get('picture_id',0);
         if ($picture_id === 0) 
