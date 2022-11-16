@@ -1,5 +1,7 @@
 UI Пользовательский интерфейс
 
+![Search by title/message Поиск по названию,описанию](https://www.dropbox.com/s/dr1gpoayf2xp4zl/search_by_title_or_message.png?raw=1 "")
+
 ![Join us, eng Регистрация, английская локаль](https://www.dropbox.com/s/o51w79ctwek25q0/user_join_us_en.png?raw=1 "")
 
 ![Join us, rus Регистрация, русская локаль](https://www.dropbox.com/s/o51w79ctwek25q0/user_join_us_en.png?raw=1 "")
@@ -38,6 +40,7 @@ Features:
 1. register user, login user, forget user (delete account), edit own email, edit own password, private area
 2. view common gallery, view gallery by username, view full picture, remove own pictures
 3. Russian/english localization (/messages/{ru,en})
+4. search by message or title
 
 There are 3 possible cases on the page with full view of single material
 1. the user has not entered the site - we show that you need to log in to take action
@@ -60,7 +63,8 @@ This is just draft - in database passhash stores as sha1. Don't do it in real pr
 1. Регистрация, вход, забыть (удаление аккаунта), правка почты, смена пароля, личный кабинет
 2. Просмотр общей галереи, просмотр галереи по имени пользователя, просмотр полного описания картинки, удаление
 своего материала
-4. Локализация (русский/английский в /messages/{ru,en} )
+3. Локализация (русский/английский в /messages/{ru,en} )
+4. Поиск по описанию или названию
 
 На странице с полным материалом возможны 3 случая
 1. пользователь не зашел на сайт - отображаем, что для действий надо залогиниться
