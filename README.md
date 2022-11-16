@@ -1,3 +1,33 @@
+UI Пользовательский интерфейс
+
+![Join us, eng Регистрация, английская локаль](https://www.dropbox.com/s/o51w79ctwek25q0/user_join_us_en.png?raw=1 "")
+
+![Join us, rus Регистрация, русская локаль](https://www.dropbox.com/s/o51w79ctwek25q0/user_join_us_en.png?raw=1 "")
+
+![Exposition Общая лента](https://www.dropbox.com/s/qogsqy49jw1szvb/material_exposition.png?raw=1 "")
+
+![Guest gallery Галерея пользователя](https://www.dropbox.com/s/in8iimtl4afe5ya/material_gallery_guest.png?raw=1 "")
+
+![Guest full material Гостевой просмотр материала](https://www.dropbox.com/s/25exomprbygyqae/material_guest_view.png?raw=1 "")
+
+![Login page Вход на сайт](https://www.dropbox.com/s/bfg0b3gbsw1jrqc/material_login_page.png?raw=1 "")
+
+![Material view if own Просмотр материала владельцем](https://www.dropbox.com/s/qdqmleansrwzhwi/material_view_if_own.png?raw=1 "")
+
+![Material view if not own Просмотр материала не владельцем](https://www.dropbox.com/s/7mcrju1k3t6em9f/material_user_not_owned.png?raw=1 "")
+
+![Change email Смена email](https://www.dropbox.com/s/ficy3dl286w0ggo/user_change_email.png?raw=1 "")
+
+![Forget, delete account Удалить аккаунт](https://www.dropbox.com/s/sn3peba0ileqju9/user_forget_account.png?raw=1 "")
+
+![New material Новый материал](https://www.dropbox.com/s/njylolgp9907qf9/user_newmaterial_en.png?raw=1 "")
+
+![Create material Добавление материала](https://www.dropbox.com/s/nm8fecy53kwap4d/user_post_to_site.png?raw=1 "")
+
+![Private area, en Личный кабинет на английском](https://www.dropbox.com/s/vxu7s1ch7rlidkx/user_private_area_en.png?raw=1 "")
+
+![Private area, ru Личный кабинет на русском](https://www.dropbox.com/s/macyvthhgpgjkea/user_private_area_ru.png?raw=1 "")
+
 Table structure 
 
 1. user: username, passhash and email
