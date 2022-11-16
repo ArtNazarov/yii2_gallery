@@ -18,6 +18,9 @@ use yii\bootstrap5\Nav
      
    <?php include(__DIR__ . '/mymenu.php'); ?>
         
+   <?php use app\components\SearchWidget; ?>
+    <?= SearchWidget::widget(); ?>     
+        
         
 
      <?= $content ?>

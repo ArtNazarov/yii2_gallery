@@ -52,7 +52,9 @@ UI_NEWMATERIAL_BUTTON => 'Добавить на сайт',
 UI_LK_MYMATERIALS_LINK => 'Мои материалы на сайте',
 UI_USERGALLERY => 'Галерея пользователя',
 UI_FULLGALLERY => 'Общая галерея сайта',
-UI_SEARCHMATERIALS => 'Поиск материалов на сайте'
+UI_SEARCHMATERIALS => 'Поиск материалов на сайте',
+UI_SEARCH_FORM=>'Поиск по сайту',
+UI_SEARCH_BUTTON=>'Найти'   
 
     
     ]);

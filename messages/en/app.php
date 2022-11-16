@@ -51,7 +51,9 @@ UI_NEWMATERIAL_BUTTON => 'Post to site' ,
 UI_LK_MYMATERIALS_LINK => 'My materials on website',   
 UI_USERGALLERY => 'Pictures of ',    
 UI_FULLGALLERY => 'All pictures',
-UI_SEARCHMATERIALS => 'Search material on site'
+UI_SEARCHMATERIALS => 'Search material on site',
+UI_SEARCH_FORM=>'Find on website',
+UI_SEARCH_BUTTON=>'Search'    
 
     ]);
 

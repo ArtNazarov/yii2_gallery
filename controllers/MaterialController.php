@@ -8,12 +8,13 @@ use yii\web\Controller;
 use app\models\MaterialRecord;
 use app\models\UserRecord;
 use app\models\MyMaterialForm;
-use  \app\models\MySearchForm;
+use \app\models\MySearchForm;
  
 class MaterialController extends Controller {
     
     public $layout = 'material';
     
+   
     
     public function actionExposition(){
         

@@ -1,5 +1,7 @@
 <?php use yii\bootstrap5\LinkPager; ?>
-<?php use yii\bootstrap5\Html ?>
+<?php use yii\bootstrap5\Html; ?>
+
+
 
 <h1><?= Yii::t('app', UI_USERGALLERY); ?></h1>
 <?php foreach($arts as $item): ?>
