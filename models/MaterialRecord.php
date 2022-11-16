@@ -4,6 +4,9 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 use app\models\MyJoinForm;
+use yii\data\Pagination;
+
+define('MATERIAL_PAGE_SIZE', 3);
  
 class MaterialRecord extends ActiveRecord{
 
@@ -83,11 +86,95 @@ $user_id = $userRecord->id;
 return  static::findAll(['user_id'=>$user_id]);
 
 }
- 
- 
+
+public static function fetchAll(){
+    $query = MaterialRecord::find();
+    $countQuery = clone $query;
+    $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>MATERIAL_PAGE_SIZE]);
+    $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
     
+    
+
+    
+        
+        
+        $materials = [];
+        
+        foreach ($models as $material){
+            $materials[] =  [
+                'picture_id' => $material->id,
+                'title' => $material->title,
+                'message' => $material->message,
+                'img_src' => $material->img_src
+                            ];
+        }
+        return [
+            
+            'arts' => $materials,
+            'pages'=> $pages
+            
+        ];
+}
+ 
+ public static function getAllByUsername($username){
+ 
+       $user = new UserRecord(); // новая модель данных
+        // загрузим данные модели
+        $user = UserRecord::findOne(['username'=>$username]);
+        
+        
+       
+        $user_id = $user->id;
+      
+    // получим все материалы этого пользователя
+             
+    $query = MaterialRecord::find()->where(['user_id'=>$user_id]);
+    $countQuery = clone $query;
+    $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>MATERIAL_PAGE_SIZE]);
+    $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
+        ->all();
+    
+     
+    
+           
+        
+         
+        $materials = [];
+        
+        foreach ($models as $material){
+            $materials[] =  [
+                'picture_id' => $material->id,
+                'title' => $material->title,
+                'message' => $material->message,
+                'img_src' => $material->img_src
+                            ];
+        } 
+        
+        return [
+                    'arts' => $materials,
+                    'pages' => $pages
+        ];
   
-    
+ } 
+ 
+ public static function getPictureById($picture_id){
+         $data = MaterialRecord::findOne($picture_id);
+         $userinfo = UserRecord::findOne($data->user_id);
+         $result = [
+           'id' => $data['id'],
+           'title' => $data['title'],
+           'message' => $data['message'],
+           'img_src' => $data['img_src'],
+           'username' => $userinfo['username']
+         ];
+         return $result;
+         
+         
+
+ }
     
     
     

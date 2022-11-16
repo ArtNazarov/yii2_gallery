@@ -48,9 +48,9 @@ UI_MAGIC_ERROR => "No magic names",
 UI_LK_NEWMATERIAL_LINK => 'Add new material', 
 UI_NEWMATERIAL_FORM => 'New material',
 UI_NEWMATERIAL_BUTTON => 'Post to site' ,  
-UI_LK_MYMATERIALS_LINK => 'My materials on website'    
-    
-    
+UI_LK_MYMATERIALS_LINK => 'My materials on website',   
+UI_USERGALLERY => 'Pictures of ',    
+UI_FULLGALLERY => 'All pictures'        
     ]);
 
 return EN_TRANSLATION;

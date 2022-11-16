@@ -9,7 +9,7 @@ use yii\bootstrap5\NavBar;
 
 $basic_links = [
  
-    ['label' => Yii::t('app',UI_MENU_MAIN_LINK), 'url' => ['/book/greeter']]
+    ['label' => Yii::t('app',UI_MENU_MAIN_LINK), 'url' => ['/material/exposition']]
     ];
 
 

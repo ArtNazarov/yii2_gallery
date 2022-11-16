@@ -49,7 +49,9 @@ UI_MAGIC_ERROR => "Магическое имя",
 UI_LK_NEWMATERIAL_LINK => 'Добавить новый материал', 
 UI_NEWMATERIAL_FORM => 'Создание нового материала',
 UI_NEWMATERIAL_BUTTON => 'Добавить на сайт',
-UI_LK_MYMATERIALS_LINK => 'Мои материалы на сайте'    
+UI_LK_MYMATERIALS_LINK => 'Мои материалы на сайте',
+UI_USERGALLERY => 'Галерея пользователя',
+UI_FULLGALLERY => 'Общая галерея сайта'    
     
     ]);
 

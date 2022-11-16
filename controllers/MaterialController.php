@@ -8,7 +8,7 @@ use yii\web\Controller;
 use app\models\MaterialRecord;
 use app\models\UserRecord;
 use app\models\MyMaterialForm;
-use yii\data\Pagination;
+
  
 class MaterialController extends Controller {
     
@@ -19,39 +19,8 @@ class MaterialController extends Controller {
         
          
        // $materials_collection = MaterialRecord::find()->all();
-       
-    $query = MaterialRecord::find();
-    $countQuery = clone $query;
-    $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize'=>2]);
-    $models = $query->offset($pages->offset)
-        ->limit($pages->limit)
-        ->all();
-    
-    
-
-    
-        
-        
-        $materials = [];
-        
-        foreach ($models as $material){
-            $materials[] =  [
-                'title' => $material->title,
-                'message' => $material->message,
-                'img_src' => $material->img_src
-                            ];
-        }
-        
-        
-        
-               return $this->render('exposition',
-                        [ 
-                          'arts' => $materials,
-                          'pages' => $pages
-                         ]
-                            );
-                       
-        
+       $data = MaterialRecord::fetchAll(); 
+       return $this->render('exposition', $data);
     }
     
     
@@ -60,37 +29,17 @@ class MaterialController extends Controller {
          // получим имя пользователя
         $username = Yii::$app->request->get('username','');
         if ($username === "") 
-            
-            
             return $this->render('nousername'); // если пустое досрочный выход
         
-        $user = new UserRecord(); // новая модель данных
-        // загрузим данные модели
-        $user = UserRecord::findOne(['username'=>$username]);
-        
-        
        
-        $user_id = $user->id;
-           
-        // получим все материалы этого пользователя
-        $materials_collection = MaterialRecord::findAll(['user_id'=>$user_id]);
-         
-        $materials = [];
-        
-        foreach ($materials_collection as $material){
-            $materials[] =  [
-                'title' => $material->title,
-                'message' => $material->message,
-                'img_src' => $material->img_src
-                            ];
-        }
+        $data = MaterialRecord::getAllByUsername($username);
         
         
-        
-               return $this->render('gallery',
+        return $this->render('gallery',
                         [ 
                           'username' => $username,  
-                          'arts' => $materials 
+                          'arts' => $data['arts'],
+                          'pages'=> $data['pages']
                          ]
                             );
                        
@@ -143,6 +92,16 @@ class MaterialController extends Controller {
        return $this->render('newmaterial',
                 ['model'=>$mv]);
         
+    }
+    
+    public function actionView(){
+         // получим номер картинки
+        $picture_id = Yii::$app->request->get('picture_id',0);
+        if ($picture_id === 0) 
+            return $this->render('nopicture'); // если не передан номер
+        $picture = MaterialRecord::getPictureById($picture_id);
+        
+       return $this->render('view', ['picture'=>$picture]);
     }
     
     
