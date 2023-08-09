@@ -1,0 +1,1 @@
+php ~/phpDocumentor/phpDocumentor.phar 
